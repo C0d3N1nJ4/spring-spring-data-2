@@ -19,23 +19,6 @@ public class StudentDao {
     public StudentDao(EntityManagerFactory emf) {
         this.em = emf.createEntityManager();
     }
-    public List<Student> findAll() {
-        return em.createQuery("from Student").getResultList();
-    }
-    public Optional<Student> findById(int id){
-        return Optional.ofNullable(em.find(Student.class, id));
-    }
-
-    public Student save(Student student) {
-        em.getTransaction().begin();
-        em.persist(student);
-        em.getTransaction().commit();
-        return student;
-    }
-
-    public void delete(Student student){
-        em.remove(student);
-    }
 
     public void deleteAll() {
         em.getTransaction().begin();
