@@ -4,13 +4,14 @@ import com.example.university.domain.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface StudentRepo extends JpaRepository<Student, Integer> {
     List<Student> findByFullTime(boolean fullTime);
     List<Student> findByAge(Integer age);
     List<Student> findByAttendeeLastName(String lastName);
 
-    /*
+
     //findOldest
      Optional<Student> findTopByOrderByAgeDesc();
 
@@ -28,5 +29,5 @@ public interface StudentRepo extends JpaRepository<Student, Integer> {
 
     //find3Oldest
      List<Student> findTop3ByOrderByAgeDesc() ;
-     */
+
 }
